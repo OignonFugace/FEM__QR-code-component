@@ -1,4 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+/* outfit-regular - latin */
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('./fonts/outfit-v6-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/outfit-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+  
+/* outfit-700 - latin */
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(''),
+        url('./fonts/outfit-v6-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/outfit-v6-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+  
+
+:root {
+    --background-color: hsl(212, 45%, 89%);
+    --paragraph-text-color: hsl(220, 15%, 55%);
+    --heading-text-color: hsl(218, 44%, 22%);
+}
 
 * {
     box-sizing: border-box;
@@ -6,42 +33,44 @@
 
 body {
     margin: 0;
-    background-color: #D6E2F0;
+    background-color: var(--background-color);
     font-size: 15px;
     font-family: 'Outfit', sans-serif;
     text-align: center;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.pannel {
+.card {
     width: 450px;
     background-color: white;
     border-radius: 1.5rem;
+    box-shadow: 0 0 4rem -3rem currentColor;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
 }
 
-.qr-code {
+.card__the-qr-code {
     border-radius: 1rem;
 }
 
-.text {
+.card__main-content {
     margin: 1.25rem 0;
 }
 
-h1 {
+.card__main-content h1 {
     padding: 0 1.5rem;
     font-weight: 700;
-    color: hsl(218, 44%, 22%);
+    color: var(--heading-text-color);
 }
 
-p {
+.card__main-content p {
     padding: 0 1.5rem;
     font-size: 1.25rem;
     font-weight: 400;
-    color: hsl(220, 15%, 55%);
+    color: var(--paragraph-text-color);
 }
